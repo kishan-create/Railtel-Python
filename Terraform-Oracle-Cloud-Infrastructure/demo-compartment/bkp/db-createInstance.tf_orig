@@ -1,0 +1,112 @@
+# Create primary databases
+resource "oci_database_db_system" "createInstanceDB" {
+  #count               = var.availability_domains_number
+  for_each            = var.db_info
+  availability_domain = var.system_availability_domain[lookup(var.db_info[each.key], "db_ad_name")]
+  compartment_id      = var.compartment_ocid
+  # cpu_core_count      = "${lookup(data.oci_database_db_system_shapes.db_system_shapes.db_system_shapes[0], "available_core_count")}"
+  database_edition = var.db_edition
+  //defined_tags     = { "tags1.tag" = "value" }
+
+  db_home {
+    database {
+      admin_password = lookup(var.db_info[each.key], "db_admin_password")
+      db_name        = lookup(var.db_info[each.key], "db_name")
+      character_set  = var.db_character_set
+      ncharacter_set = var.db_n_character_set
+      db_workload    = var.db_workload
+      pdb_name       = lookup(var.db_info[each.key], "db_pdb_name")
+      //defined_tags     = { "tags1.tag" = "value" }
+
+      db_backup_config {
+        auto_backup_enabled     = lookup(var.db_info[each.key], "db_backup_auto")
+        recovery_window_in_days = lookup(var.db_info[each.key], "db_backup_retention")
+        #auto_backup_window      = lookup(var.db_info[each.key], "db_backup_schedule")
+      }
+    }
+
+    # db_version   = var.db_version
+    db_version   = lookup(var.db_info[each.key], "db_version", var.db_version)
+    display_name = lookup(var.db_info[each.key], "db_home_display_name")
+  }
+
+  disk_redundancy = var.db_disk_redundancy
+  #shape           = var.db_system_shape
+  shape           = lookup(var.db_info[each.key], "db_system_shape", var.db_system_shape)
+  subnet_id       = oci_core_subnet.sub-vcn-tf1.id
+  ssh_public_keys = [var.ssh_public_key_1, var.ssh_public_key_2]
+  display_name    = lookup(var.db_info[each.key], "db_system_display_name")
+
+  hostname                = lookup(var.db_info[each.key], "db_hostname")
+  data_storage_percentage = var.db_data_storage_percentage
+  data_storage_size_in_gb = var.db_data_storage_size_in_gb
+  license_model           = var.db_license_model
+  node_count              = var.db_node_count
+  cluster_name            = lookup(var.db_info[each.key], "db_system_cluster_name")
+}
+
+# Get DB node list
+data "oci_database_db_nodes" "db_nodes" {
+  for_each       = var.db_info
+  compartment_id = var.compartment_ocid
+  db_system_id   = oci_database_db_system.createInstanceDB[each.key].id
+}
+
+# Get First DB node details
+data "oci_database_db_node" "db_node_details_FirstNode" {
+  for_each   = var.db_info
+  db_node_id = lookup(data.oci_database_db_nodes.db_nodes[each.key].db_nodes[0], "id")
+}
+
+# Get Second DB node details
+data "oci_database_db_node" "db_node_details_SecondNode" {
+  for_each   = var.db_info
+  db_node_id = lookup(data.oci_database_db_nodes.db_nodes[each.key].db_nodes[1], "id")
+}
+
+# Gets the OCID of the first (default) vNIC of the first node
+data "oci_core_vnic" "db_node_vnic_FirstNode" {
+  for_each = var.db_info
+  vnic_id  = data.oci_database_db_node.db_node_details_FirstNode[each.key].vnic_id
+}
+
+# Gets the OCID of the first (default) vNIC of the second node
+data "oci_core_vnic" "db_node_vnic_SecondNode" {
+  for_each = var.db_info
+  vnic_id  = data.oci_database_db_node.db_node_details_SecondNode[each.key].vnic_id
+}
+
+
+resource "null_resource" "remote-exec-db-first-node" {
+  for_each = var.db_info
+  provisioner "remote-exec" {
+    connection {
+      agent       = false
+      timeout     = "30m"
+      host        = data.oci_core_vnic.db_node_vnic_FirstNode[each.key].private_ip_address
+      user        = "opc"
+      private_key = file(var.opc_ssh_private_key)
+    }
+    script = var.dbsystems_bootstrap
+  }
+  triggers = {
+    md5 = filemd5(var.dbsystems_bootstrap)
+  }
+}
+
+resource "null_resource" "remote-exec-db-second-node" {
+  for_each = var.db_info
+  provisioner "remote-exec" {
+    connection {
+      agent       = false
+      timeout     = "30m"
+      host        = data.oci_core_vnic.db_node_vnic_SecondNode[each.key].private_ip_address
+      user        = "opc"
+      private_key = file(var.opc_ssh_private_key)
+    }
+    script = var.dbsystems_bootstrap
+  }
+  triggers = {
+    md5 = filemd5(var.dbsystems_bootstrap)
+  }
+}

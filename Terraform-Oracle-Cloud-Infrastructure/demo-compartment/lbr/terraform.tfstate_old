@@ -1,0 +1,952 @@
+{
+  "version": 4,
+  "terraform_version": "1.6.4",
+  "serial": 13,
+  "lineage": "959b3237-b790-06ce-0acb-321ec973ee69",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "data",
+      "type": "oci_core_services",
+      "name": "all_services",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "filter": [
+              {
+                "name": "name",
+                "regex": true,
+                "values": [
+                  "All .* Services In Oracle Services Network"
+                ]
+              }
+            ],
+            "id": "CoreServicesDataSource-0",
+            "services": [
+              {
+                "cidr_block": "all-iad-services-in-oracle-services-network",
+                "description": "All IAD Services In Oracle Services Network",
+                "id": "ocid1.service.oc1.iad.aaaaaaaam4zfmy2rjue6fmglumm3czgisxzrnvrwqeodtztg7hwa272mlfna",
+                "name": "All IAD Services In Oracle Services Network"
+              }
+            ]
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "oci_core_volume_backup_policies",
+      "name": "get_predefined_volume_backup_policies",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "compartment_id": null,
+            "filter": [
+              {
+                "name": "display_name",
+                "regex": false,
+                "values": [
+                  "bronze",
+                  "silver",
+                  "gold"
+                ]
+              }
+            ],
+            "id": "CoreVolumeBackupPoliciesDataSource-0",
+            "volume_backup_policies": [
+              {
+                "compartment_id": "",
+                "defined_tags": {},
+                "destination_region": "",
+                "display_name": "silver",
+                "freeform_tags": {},
+                "id": "ocid1.volumebackuppolicy.oc1..aaaaaaaa7hwv7iscewqqcmyqe2zuzfce6setvckhbxduswtxf6ctew7e54ja",
+                "schedules": [
+                  {
+                    "backup_type": "INCREMENTAL",
+                    "day_of_month": -1,
+                    "day_of_week": "",
+                    "hour_of_day": -1,
+                    "month": "",
+                    "offset_seconds": 0,
+                    "offset_type": "",
+                    "period": "ONE_WEEK",
+                    "retention_seconds": 2419200,
+                    "time_zone": "REGIONAL_DATA_CENTER_TIME"
+                  },
+                  {
+                    "backup_type": "INCREMENTAL",
+                    "day_of_month": -1,
+                    "day_of_week": "",
+                    "hour_of_day": -1,
+                    "month": "",
+                    "offset_seconds": 0,
+                    "offset_type": "",
+                    "period": "ONE_MONTH",
+                    "retention_seconds": 31557600,
+                    "time_zone": "REGIONAL_DATA_CENTER_TIME"
+                  },
+                  {
+                    "backup_type": "INCREMENTAL",
+                    "day_of_month": -1,
+                    "day_of_week": "",
+                    "hour_of_day": -1,
+                    "month": "",
+                    "offset_seconds": 0,
+                    "offset_type": "",
+                    "period": "ONE_YEAR",
+                    "retention_seconds": 157680000,
+                    "time_zone": "REGIONAL_DATA_CENTER_TIME"
+                  }
+                ],
+                "time_created": "2017-10-01 00:00:00.001 +0000 UTC"
+              },
+              {
+                "compartment_id": "",
+                "defined_tags": {},
+                "destination_region": "",
+                "display_name": "bronze",
+                "freeform_tags": {},
+                "id": "ocid1.volumebackuppolicy.oc1..aaaaaaaadrzfwjb5tflixtmy5axp2kx65uqakgnupfogabzjhtn5x5dfra6q",
+                "schedules": [
+                  {
+                    "backup_type": "INCREMENTAL",
+                    "day_of_month": -1,
+                    "day_of_week": "",
+                    "hour_of_day": -1,
+                    "month": "",
+                    "offset_seconds": 0,
+                    "offset_type": "",
+                    "period": "ONE_MONTH",
+                    "retention_seconds": 31557600,
+                    "time_zone": "REGIONAL_DATA_CENTER_TIME"
+                  },
+                  {
+                    "backup_type": "INCREMENTAL",
+                    "day_of_month": -1,
+                    "day_of_week": "",
+                    "hour_of_day": -1,
+                    "month": "",
+                    "offset_seconds": 0,
+                    "offset_type": "",
+                    "period": "ONE_YEAR",
+                    "retention_seconds": 157680000,
+                    "time_zone": "REGIONAL_DATA_CENTER_TIME"
+                  }
+                ],
+                "time_created": "2017-10-01 00:00:00 +0000 UTC"
+              },
+              {
+                "compartment_id": "",
+                "defined_tags": {},
+                "destination_region": "",
+                "display_name": "gold",
+                "freeform_tags": {},
+                "id": "ocid1.volumebackuppolicy.oc1..aaaaaaaagcremuefit7dpcnjpdrtphjk4bwm3emm55t6cghctt2m6iyyjdva",
+                "schedules": [
+                  {
+                    "backup_type": "INCREMENTAL",
+                    "day_of_month": -1,
+                    "day_of_week": "",
+                    "hour_of_day": -1,
+                    "month": "",
+                    "offset_seconds": 0,
+                    "offset_type": "",
+                    "period": "ONE_DAY",
+                    "retention_seconds": 604800,
+                    "time_zone": "REGIONAL_DATA_CENTER_TIME"
+                  },
+                  {
+                    "backup_type": "INCREMENTAL",
+                    "day_of_month": -1,
+                    "day_of_week": "",
+                    "hour_of_day": -1,
+                    "month": "",
+                    "offset_seconds": 0,
+                    "offset_type": "",
+                    "period": "ONE_WEEK",
+                    "retention_seconds": 2419200,
+                    "time_zone": "REGIONAL_DATA_CENTER_TIME"
+                  },
+                  {
+                    "backup_type": "INCREMENTAL",
+                    "day_of_month": -1,
+                    "day_of_week": "",
+                    "hour_of_day": -1,
+                    "month": "",
+                    "offset_seconds": 0,
+                    "offset_type": "",
+                    "period": "ONE_MONTH",
+                    "retention_seconds": 31557600,
+                    "time_zone": "REGIONAL_DATA_CENTER_TIME"
+                  },
+                  {
+                    "backup_type": "INCREMENTAL",
+                    "day_of_month": -1,
+                    "day_of_week": "",
+                    "hour_of_day": -1,
+                    "month": "",
+                    "offset_seconds": 0,
+                    "offset_type": "",
+                    "period": "ONE_YEAR",
+                    "retention_seconds": 157680000,
+                    "time_zone": "REGIONAL_DATA_CENTER_TIME"
+                  }
+                ],
+                "time_created": "2017-10-01 00:00:00.002 +0000 UTC"
+              }
+            ]
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_instance",
+      "name": "createInstance",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "index_key": "host1",
+          "schema_version": 0,
+          "attributes": {
+            "agent_config": [
+              {
+                "are_all_plugins_disabled": false,
+                "is_management_disabled": false,
+                "is_monitoring_disabled": false,
+                "plugins_config": []
+              }
+            ],
+            "async": null,
+            "availability_config": [
+              {
+                "is_live_migration_preferred": false,
+                "recovery_action": "RESTORE_INSTANCE"
+              }
+            ],
+            "availability_domain": "NdNQ:US-ASHBURN-AD-1",
+            "boot_volume_id": "ocid1.bootvolume.oc1.iad.abuwcljsevpi626ip3xjrx5k5bqxtd4gxorqn7notra4x7owpy3wrjfx4s3a",
+            "capacity_reservation_id": null,
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "compute_cluster_id": null,
+            "create_vnic_details": [
+              {
+                "assign_ipv6ip": false,
+                "assign_private_dns_record": false,
+                "assign_public_ip": "false",
+                "defined_tags": {
+                  "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+                  "Oracle-Tags.CreatedOn": "2023-11-21T08:45:20.986Z"
+                },
+                "display_name": "Primaryvnic",
+                "freeform_tags": {},
+                "hostname_label": "myhost1",
+                "ipv6address_ipv6subnet_cidr_pair_details": [],
+                "nsg_ids": [],
+                "private_ip": "10.0.0.70",
+                "skip_source_dest_check": false,
+                "subnet_id": "ocid1.subnet.oc1.iad.aaaaaaaajsoihz3j5t7shndhmwagqfx2zssbktzbzz7tqlxk7us26lu5baja",
+                "vlan_id": ""
+              }
+            ],
+            "dedicated_vm_host_id": null,
+            "defined_tags": {
+              "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+              "Oracle-Tags.CreatedOn": "2023-11-21T08:45:20.864Z"
+            },
+            "display_name": "myhost1",
+            "extended_metadata": {},
+            "fault_domain": "FAULT-DOMAIN-2",
+            "freeform_tags": {},
+            "hostname_label": "myhost1",
+            "id": "ocid1.instance.oc1.iad.anuwcljslbs56rqcgsjhfo5lx5odbpnqdibnd6pv3kw47f2yuumv4pb34s5a",
+            "image": "ocid1.image.oc1.iad.aaaaaaaanmmjbkpu7u36kmi3yhlmncksxrnwrhjyox4ng3e5bff4lias7tka",
+            "instance_configuration_id": null,
+            "instance_options": [
+              {
+                "are_legacy_imds_endpoints_disabled": false
+              }
+            ],
+            "ipxe_script": null,
+            "is_cross_numa_node": false,
+            "is_pv_encryption_in_transit_enabled": null,
+            "launch_mode": "PARAVIRTUALIZED",
+            "launch_options": [
+              {
+                "boot_volume_type": "PARAVIRTUALIZED",
+                "firmware": "UEFI_64",
+                "is_consistent_volume_naming_enabled": true,
+                "is_pv_encryption_in_transit_enabled": false,
+                "network_type": "PARAVIRTUALIZED",
+                "remote_data_volume_type": "PARAVIRTUALIZED"
+              }
+            ],
+            "metadata": {
+              "ssh_authorized_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnzzz3xB1xrs0DrCRZMvFnIOjH+XBVL6QZM0sfA7PXaDsK4tNTKxQxM7uBAn81j6OQTp6eCB5W9O4j0XzvHiacl5XecrKRfH0CT9zeBVG5KUyMIyobvIWfo0OPiV17BmN9J62P/csGLElzbXeqmBNAL0gcegdRvL9rdVdtDCk1/zbyjoT6RnJ9N1dy+5hPh6GZjSeSm1KvhoyiWMCM/yVdUPJX6dsZ0HJVTpKbaxVN7aLCHi19w9WcmsjcDLONYqq92s87Q90Q8VGnFpETYkR6NRYFFgx6ywrSWvSFj+bL84C2AzHNJP05FMrT19baZtwDe62wIyVlYRwneQeogzPNoVcsoabTLZVoeOqp5D3GaCHt0HRefU5Y2pLHaxIQypkjK8JjDM33SE/YM9muZtndBhNufGN4sjbFA9hI7tIJlEq7PiVeQII59MxAfxybeD7CQEknKkIjRHatgnyjmIH/iiZTXfCeFhHa3h0yd7wqTe2x5HJxR10lgJRvc9c5k8E= automate@pocautomate1\n",
+              "user_data": "IyEvYmluL2Jhc2gKCiMgVXBkYXRlIHRvIHRoZSBsYXRlc3QgdmVyc2lvbiBvZiBhbGwgYWxyZWFkeSBpbnN0YWxsZWQgcGFja2FnZXMKeXVtIHVwZGF0ZSAteQoKIyBDaGFuZ2Ugc2VjdXJpdHkgc2V0dGluZ3MgZm9yIHNlbGludXggYW5kIGFkZCBwb3J0IHRvIGZpcmV3YWxsIChlZzogV2VibG9naWMgcG9ydHMpCnNldGVuZm9yY2UgcGVybWlzc2l2ZQpzZWQgLWkgLWUgJ3MvU0VMSU5VWD1lbmZvcmNpbmcvU0VMSU5VWD1wZXJtaXNzaXZlLycgL2V0Yy9zZWxpbnV4L2NvbmZpZwpmaXJld2FsbC1jbWQgLS16b25lPXB1YmxpYyAtLWFkZC1wb3J0PTcwMDIvdGNwIC0tcGVybWFuZW50CmZpcmV3YWxsLWNtZCAtLXpvbmU9cHVibGljIC0tYWRkLXBvcnQ9NzAwNC90Y3AgLS1wZXJtYW5lbnQKZmlyZXdhbGwtY21kIC0tcmVsb2FkCgojIEFkZCBhbnNpYmxlIHVzZXIgYW5kIGNvbmZpZ3VyZSBzdWRvIGZvciBoaW0KZWNobyAtZSAiIyBVc2VyIHJ1bGVzIGZvciBhbnNpYmxlXG5hbnNpYmxlIEFMTD0oQUxMKSBOT1BBU1NXRDpBTExcbiIgPi9ldGMvc3Vkb2Vycy5kLzgwLWNsb3VkLWluaXQtYW5zaWJsZQpncm91cGFkZCAtZyAxMTAxIGFuc2libGUKdXNlcmFkZCAtbSAtdSAxMTAxIC1kIC9ob21lL2Fuc2libGUgLWMgIlVzZXIgYW5zaWJsZSIgLXMgIi9iaW4vYmFzaCIgLWcgYW5zaWJsZSBhbnNpYmxlCgpta2RpciAtcCAvaG9tZS9hbnNpYmxlLy5zc2gKY2htb2QgNzAwIC9ob21lL2Fuc2libGUvLnNzaAoKIyBBZGQgc3NoIGtleSBmb3IgYW5zaWJsZSB1c2VyCmVjaG8gInNzaC1yc2EgcHV0LXNzaC1rZXktY29udGVudC1oZXJlIGFuc2libGUtdXNlciIgPiAvaG9tZS9hbnNpYmxlLy5zc2gvYXV0aG9yaXplZF9rZXlzCmNobW9kIDYwMCAvaG9tZS9hbnNpYmxlLy5zc2gvYXV0aG9yaXplZF9rZXlzCgpjaG93biAtUiBhbnNpYmxlOmFuc2libGUgL2hvbWUvYW5zaWJsZS8uc3No"
+            },
+            "platform_config": [],
+            "preemptible_instance_config": [],
+            "preserve_boot_volume": null,
+            "private_ip": "10.0.0.70",
+            "public_ip": "",
+            "region": "iad",
+            "shape": "VM.Standard2.1",
+            "shape_config": [
+              {
+                "baseline_ocpu_utilization": "",
+                "gpu_description": "",
+                "gpus": 0,
+                "local_disk_description": "",
+                "local_disks": 0,
+                "local_disks_total_size_in_gbs": 0,
+                "max_vnic_attachments": 2,
+                "memory_in_gbs": 15,
+                "networking_bandwidth_in_gbps": 1,
+                "nvmes": 0,
+                "ocpus": 1,
+                "processor_description": "2.0 GHz Intel® Xeon® Platinum 8167M (Skylake)",
+                "vcpus": 2
+              }
+            ],
+            "source_details": [
+              {
+                "boot_volume_size_in_gbs": "60",
+                "boot_volume_vpus_per_gb": "10",
+                "instance_source_image_filter_details": [],
+                "kms_key_id": "",
+                "source_id": "ocid1.image.oc1.iad.aaaaaaaanmmjbkpu7u36kmi3yhlmncksxrnwrhjyox4ng3e5bff4lias7tka",
+                "source_type": "image"
+              }
+            ],
+            "state": "RUNNING",
+            "subnet_id": "ocid1.subnet.oc1.iad.aaaaaaaajsoihz3j5t7shndhmwagqfx2zssbktzbzz7tqlxk7us26lu5baja",
+            "system_tags": {},
+            "time_created": "2023-11-21 08:45:21.399 +0000 UTC",
+            "time_maintenance_reboot_due": "",
+            "timeouts": {
+              "create": "60m",
+              "delete": null,
+              "update": null
+            },
+            "update_operation_constraint": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozNjAwMDAwMDAwMDAwLCJkZWxldGUiOjQ1MDAwMDAwMDAwMDAsInVwZGF0ZSI6MjcwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "data.oci_core_services.all_services",
+            "oci_core_local_peering_gateway.lpg-vcn-tf1-to-adm",
+            "oci_core_local_peering_gateway.lpg-vcn-tf1-to-vpn",
+            "oci_core_nat_gateway.nat-vcn-tf1",
+            "oci_core_route_table.rt-vcn-tf1",
+            "oci_core_security_list.sl-vcn-tf1",
+            "oci_core_service_gateway.sg-vcn-tf1",
+            "oci_core_subnet.sub-vcn-tf1",
+            "oci_core_virtual_network.vcn-tf1"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_local_peering_gateway",
+      "name": "lpg-vcn-tf1-to-adm",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "defined_tags": {
+              "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+              "Oracle-Tags.CreatedOn": "2023-11-21T08:45:15.696Z"
+            },
+            "display_name": "lpg-clt-sub-to-adm",
+            "freeform_tags": {},
+            "id": "ocid1.localpeeringgateway.oc1.iad.aaaaaaaatm24cyqcu42y3p2pizcmlw4wf7pvnc2khpnyrnpl44zzux5g4daa",
+            "is_cross_tenancy_peering": false,
+            "peer_advertised_cidr": null,
+            "peer_advertised_cidr_details": [],
+            "peer_id": null,
+            "peering_status": "NEW",
+            "peering_status_details": "Not connected to a peer.",
+            "route_table_id": null,
+            "state": "AVAILABLE",
+            "time_created": "2023-11-21 08:45:15.729 +0000 UTC",
+            "timeouts": null,
+            "vcn_id": "ocid1.vcn.oc1.iad.amaaaaaalbs56rqafcrllru27klchaq3tkzin75nz474fksev3ubxjzietdq"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "oci_core_virtual_network.vcn-tf1"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_local_peering_gateway",
+      "name": "lpg-vcn-tf1-to-vpn",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "defined_tags": {
+              "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+              "Oracle-Tags.CreatedOn": "2023-11-21T08:45:15.757Z"
+            },
+            "display_name": "lpg-clt-sub-to-vpn",
+            "freeform_tags": {},
+            "id": "ocid1.localpeeringgateway.oc1.iad.aaaaaaaat2mml5i6hnpczxqdkb4seaeaorel2adojwjvjhonfbfz56t3gj4a",
+            "is_cross_tenancy_peering": false,
+            "peer_advertised_cidr": null,
+            "peer_advertised_cidr_details": [],
+            "peer_id": null,
+            "peering_status": "NEW",
+            "peering_status_details": "Not connected to a peer.",
+            "route_table_id": null,
+            "state": "AVAILABLE",
+            "time_created": "2023-11-21 08:45:15.794 +0000 UTC",
+            "timeouts": null,
+            "vcn_id": "ocid1.vcn.oc1.iad.amaaaaaalbs56rqafcrllru27klchaq3tkzin75nz474fksev3ubxjzietdq"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "oci_core_virtual_network.vcn-tf1"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_nat_gateway",
+      "name": "nat-vcn-tf1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "block_traffic": false,
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "defined_tags": {
+              "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+              "Oracle-Tags.CreatedOn": "2023-11-21T08:45:15.804Z"
+            },
+            "display_name": "nat-clt-sub",
+            "freeform_tags": {},
+            "id": "ocid1.natgateway.oc1.iad.aaaaaaaanvbns7f2fa3tganu2albcifzq753qkjlaxanykeqct5qakbs2fiq",
+            "nat_ip": "129.80.109.106",
+            "public_ip_id": "ocid1.publicip.oc1.iad.aaaaaaaah3stl3ptkzoxcxzdhlska4s6gjh3cdqvix55ugzfgwrlwuihisha",
+            "route_table_id": null,
+            "state": "AVAILABLE",
+            "time_created": "2023-11-21 08:45:16.377 +0000 UTC",
+            "timeouts": null,
+            "vcn_id": "ocid1.vcn.oc1.iad.amaaaaaalbs56rqafcrllru27klchaq3tkzin75nz474fksev3ubxjzietdq"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "oci_core_virtual_network.vcn-tf1"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_route_table",
+      "name": "rt-vcn-tf1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "defined_tags": {
+              "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+              "Oracle-Tags.CreatedOn": "2023-11-21T08:45:17.491Z"
+            },
+            "display_name": "rt-clt-sub",
+            "freeform_tags": {},
+            "id": "ocid1.routetable.oc1.iad.aaaaaaaa3hvcdglaj6b23af3hhhns7eogoutz45mxbcet3himodrgunpzhba",
+            "route_rules": [
+              {
+                "cidr_block": "",
+                "description": "",
+                "destination": "0.0.0.0/0",
+                "destination_type": "CIDR_BLOCK",
+                "network_entity_id": "ocid1.natgateway.oc1.iad.aaaaaaaanvbns7f2fa3tganu2albcifzq753qkjlaxanykeqct5qakbs2fiq",
+                "route_type": ""
+              },
+              {
+                "cidr_block": "",
+                "description": "",
+                "destination": "10.1.0.0/23",
+                "destination_type": "CIDR_BLOCK",
+                "network_entity_id": "ocid1.localpeeringgateway.oc1.iad.aaaaaaaatm24cyqcu42y3p2pizcmlw4wf7pvnc2khpnyrnpl44zzux5g4daa",
+                "route_type": ""
+              },
+              {
+                "cidr_block": "",
+                "description": "",
+                "destination": "20.0.0.0/8",
+                "destination_type": "CIDR_BLOCK",
+                "network_entity_id": "ocid1.localpeeringgateway.oc1.iad.aaaaaaaat2mml5i6hnpczxqdkb4seaeaorel2adojwjvjhonfbfz56t3gj4a",
+                "route_type": ""
+              },
+              {
+                "cidr_block": "",
+                "description": "",
+                "destination": "all-iad-services-in-oracle-services-network",
+                "destination_type": "SERVICE_CIDR_BLOCK",
+                "network_entity_id": "ocid1.servicegateway.oc1.iad.aaaaaaaal7npsdpiztfzbq23pscrlfrsvv76pr7kn73ugzojlgj5f6h4wrfa",
+                "route_type": ""
+              }
+            ],
+            "state": "AVAILABLE",
+            "time_created": "2023-11-21 08:45:17.562 +0000 UTC",
+            "timeouts": null,
+            "vcn_id": "ocid1.vcn.oc1.iad.amaaaaaalbs56rqafcrllru27klchaq3tkzin75nz474fksev3ubxjzietdq"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "data.oci_core_services.all_services",
+            "oci_core_local_peering_gateway.lpg-vcn-tf1-to-adm",
+            "oci_core_local_peering_gateway.lpg-vcn-tf1-to-vpn",
+            "oci_core_nat_gateway.nat-vcn-tf1",
+            "oci_core_service_gateway.sg-vcn-tf1",
+            "oci_core_virtual_network.vcn-tf1"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_security_list",
+      "name": "sl-vcn-tf1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "defined_tags": {
+              "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+              "Oracle-Tags.CreatedOn": "2023-11-21T08:45:15.792Z"
+            },
+            "display_name": "sl-clt-sub",
+            "egress_security_rules": [
+              {
+                "description": "",
+                "destination": "0.0.0.0/0",
+                "destination_type": "CIDR_BLOCK",
+                "icmp_options": [],
+                "protocol": "6",
+                "stateless": false,
+                "tcp_options": [],
+                "udp_options": []
+              },
+              {
+                "description": "",
+                "destination": "10.0.0.0/16",
+                "destination_type": "CIDR_BLOCK",
+                "icmp_options": [],
+                "protocol": "1",
+                "stateless": false,
+                "tcp_options": [],
+                "udp_options": []
+              }
+            ],
+            "freeform_tags": {},
+            "id": "ocid1.securitylist.oc1.iad.aaaaaaaaqa453rqml3br3s6qh35mz3hujud6id44p3tfhqb2rpdc7kvcqurq",
+            "ingress_security_rules": [
+              {
+                "description": "",
+                "icmp_options": [],
+                "protocol": "1",
+                "source": "10.0.0.0/8",
+                "source_type": "CIDR_BLOCK",
+                "stateless": true,
+                "tcp_options": [],
+                "udp_options": []
+              },
+              {
+                "description": "",
+                "icmp_options": [],
+                "protocol": "6",
+                "source": "10.0.0.0/16",
+                "source_type": "CIDR_BLOCK",
+                "stateless": false,
+                "tcp_options": [
+                  {
+                    "max": 1521,
+                    "min": 1521,
+                    "source_port_range": []
+                  }
+                ],
+                "udp_options": []
+              },
+              {
+                "description": "",
+                "icmp_options": [],
+                "protocol": "6",
+                "source": "10.0.0.0/16",
+                "source_type": "CIDR_BLOCK",
+                "stateless": false,
+                "tcp_options": [
+                  {
+                    "max": 443,
+                    "min": 443,
+                    "source_port_range": []
+                  }
+                ],
+                "udp_options": []
+              },
+              {
+                "description": "",
+                "icmp_options": [],
+                "protocol": "6",
+                "source": "10.0.0.0/16",
+                "source_type": "CIDR_BLOCK",
+                "stateless": false,
+                "tcp_options": [
+                  {
+                    "max": 6200,
+                    "min": 6200,
+                    "source_port_range": []
+                  }
+                ],
+                "udp_options": []
+              },
+              {
+                "description": "",
+                "icmp_options": [],
+                "protocol": "6",
+                "source": "10.0.0.0/16",
+                "source_type": "CIDR_BLOCK",
+                "stateless": false,
+                "tcp_options": [
+                  {
+                    "max": 7002,
+                    "min": 7002,
+                    "source_port_range": []
+                  }
+                ],
+                "udp_options": []
+              },
+              {
+                "description": "",
+                "icmp_options": [],
+                "protocol": "6",
+                "source": "10.0.0.0/16",
+                "source_type": "CIDR_BLOCK",
+                "stateless": false,
+                "tcp_options": [
+                  {
+                    "max": 9074,
+                    "min": 9074,
+                    "source_port_range": []
+                  }
+                ],
+                "udp_options": []
+              },
+              {
+                "description": "",
+                "icmp_options": [],
+                "protocol": "6",
+                "source": "10.1.0.0/23",
+                "source_type": "CIDR_BLOCK",
+                "stateless": false,
+                "tcp_options": [
+                  {
+                    "max": 22,
+                    "min": 22,
+                    "source_port_range": []
+                  }
+                ],
+                "udp_options": []
+              }
+            ],
+            "state": "AVAILABLE",
+            "time_created": "2023-11-21 08:45:15.881 +0000 UTC",
+            "timeouts": null,
+            "vcn_id": "ocid1.vcn.oc1.iad.amaaaaaalbs56rqafcrllru27klchaq3tkzin75nz474fksev3ubxjzietdq"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "oci_core_virtual_network.vcn-tf1"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_service_gateway",
+      "name": "sg-vcn-tf1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "block_traffic": false,
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "defined_tags": {
+              "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+              "Oracle-Tags.CreatedOn": "2023-11-21T08:45:15.703Z"
+            },
+            "display_name": "sg-clt-sub",
+            "freeform_tags": {},
+            "id": "ocid1.servicegateway.oc1.iad.aaaaaaaal7npsdpiztfzbq23pscrlfrsvv76pr7kn73ugzojlgj5f6h4wrfa",
+            "route_table_id": null,
+            "services": [
+              {
+                "service_id": "ocid1.service.oc1.iad.aaaaaaaam4zfmy2rjue6fmglumm3czgisxzrnvrwqeodtztg7hwa272mlfna",
+                "service_name": "All IAD Services In Oracle Services Network"
+              }
+            ],
+            "state": "AVAILABLE",
+            "time_created": "2023-11-21 08:45:16.217 +0000 UTC",
+            "timeouts": null,
+            "vcn_id": "ocid1.vcn.oc1.iad.amaaaaaalbs56rqafcrllru27klchaq3tkzin75nz474fksev3ubxjzietdq"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "data.oci_core_services.all_services",
+            "oci_core_virtual_network.vcn-tf1"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_subnet",
+      "name": "sub-vcn-tf1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "availability_domain": null,
+            "cidr_block": "10.0.0.0/24",
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "defined_tags": {
+              "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+              "Oracle-Tags.CreatedOn": "2023-11-21T08:45:18.186Z"
+            },
+            "dhcp_options_id": "ocid1.dhcpoptions.oc1.iad.aaaaaaaawpmwu2n3jvzx33bym5dlfja3ztqulritgjt5gsywflqr4bucrbta",
+            "display_name": "sub-clt-sub",
+            "dns_label": "sub",
+            "freeform_tags": {},
+            "id": "ocid1.subnet.oc1.iad.aaaaaaaajsoihz3j5t7shndhmwagqfx2zssbktzbzz7tqlxk7us26lu5baja",
+            "ipv6cidr_block": null,
+            "ipv6cidr_blocks": [],
+            "ipv6virtual_router_ip": null,
+            "prohibit_internet_ingress": true,
+            "prohibit_public_ip_on_vnic": true,
+            "route_table_id": "ocid1.routetable.oc1.iad.aaaaaaaa3hvcdglaj6b23af3hhhns7eogoutz45mxbcet3himodrgunpzhba",
+            "security_list_ids": [
+              "ocid1.securitylist.oc1.iad.aaaaaaaaqa453rqml3br3s6qh35mz3hujud6id44p3tfhqb2rpdc7kvcqurq"
+            ],
+            "state": "AVAILABLE",
+            "subnet_domain_name": "sub.clt.oraclevcn.com",
+            "time_created": "2023-11-21 08:45:18.274 +0000 UTC",
+            "timeouts": null,
+            "vcn_id": "ocid1.vcn.oc1.iad.amaaaaaalbs56rqafcrllru27klchaq3tkzin75nz474fksev3ubxjzietdq",
+            "virtual_router_ip": "10.0.0.1",
+            "virtual_router_mac": "00:00:17:2D:A4:2A"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "data.oci_core_services.all_services",
+            "oci_core_local_peering_gateway.lpg-vcn-tf1-to-adm",
+            "oci_core_local_peering_gateway.lpg-vcn-tf1-to-vpn",
+            "oci_core_nat_gateway.nat-vcn-tf1",
+            "oci_core_route_table.rt-vcn-tf1",
+            "oci_core_security_list.sl-vcn-tf1",
+            "oci_core_service_gateway.sg-vcn-tf1",
+            "oci_core_virtual_network.vcn-tf1"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_virtual_network",
+      "name": "vcn-tf1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "byoipv6cidr_blocks": [],
+            "byoipv6cidr_details": null,
+            "cidr_block": "10.0.0.0/16",
+            "cidr_blocks": [
+              "10.0.0.0/16"
+            ],
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "default_dhcp_options_id": "ocid1.dhcpoptions.oc1.iad.aaaaaaaawpmwu2n3jvzx33bym5dlfja3ztqulritgjt5gsywflqr4bucrbta",
+            "default_route_table_id": "ocid1.routetable.oc1.iad.aaaaaaaaaeqa4gu534vknmjnlpbi3fetr6kcmfg2b6l4rd5zf4fxbepicznq",
+            "default_security_list_id": "ocid1.securitylist.oc1.iad.aaaaaaaae5wbotpbfgrvf7ebmxl35lkaymf7t3gfvby6ucbjwjhm5aobhd3a",
+            "defined_tags": {
+              "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+              "Oracle-Tags.CreatedOn": "2023-11-21T08:45:14.755Z"
+            },
+            "display_name": "vcn-clt-sub",
+            "dns_label": "clt",
+            "freeform_tags": {},
+            "id": "ocid1.vcn.oc1.iad.amaaaaaalbs56rqafcrllru27klchaq3tkzin75nz474fksev3ubxjzietdq",
+            "ipv6cidr_blocks": [],
+            "ipv6private_cidr_blocks": [],
+            "is_ipv6enabled": false,
+            "is_oracle_gua_allocation_enabled": null,
+            "state": "AVAILABLE",
+            "time_created": "2023-11-21 08:45:14.832 +0000 UTC",
+            "timeouts": null,
+            "vcn_domain_name": "clt.oraclevcn.com"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_volume",
+      "name": "createVolume",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "index_key": "host1",
+          "schema_version": 0,
+          "attributes": {
+            "auto_tuned_vpus_per_gb": null,
+            "autotune_policies": [],
+            "availability_domain": "NdNQ:US-ASHBURN-AD-1",
+            "backup_policy_id": null,
+            "block_volume_replicas": [],
+            "block_volume_replicas_deletion": null,
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "defined_tags": {
+              "Oracle-Tags.CreatedBy": "oracleidentitycloudservice/pradeepta.samal@bourntec.com",
+              "Oracle-Tags.CreatedOn": "2023-11-21T08:45:14.945Z"
+            },
+            "display_name": "myhost1_data",
+            "freeform_tags": {},
+            "id": "ocid1.volume.oc1.iad.abuwcljsdnavyjg3v23fpc6ht4rtlzwy7yrr5apzvugwq7fy6ada4rkhtgia",
+            "is_auto_tune_enabled": false,
+            "is_hydrated": true,
+            "kms_key_id": null,
+            "size_in_gbs": "50",
+            "size_in_mbs": "51200",
+            "source_details": [],
+            "state": "AVAILABLE",
+            "system_tags": {},
+            "time_created": "2023-11-21 08:45:14.969 +0000 UTC",
+            "timeouts": null,
+            "volume_backup_id": null,
+            "volume_group_id": null,
+            "vpus_per_gb": "10"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_volume_attachment",
+      "name": "attachVolume",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "index_key": "host1",
+          "schema_version": 0,
+          "attributes": {
+            "attachment_type": "paravirtualized",
+            "availability_domain": "NdNQ:US-ASHBURN-AD-1",
+            "chap_secret": null,
+            "chap_username": null,
+            "compartment_id": "ocid1.tenancy.oc1..aaaaaaaawz5w437y7pvvqmdel45hyr62ku7zg4rdmogrzybsklgcwe5wxuaa",
+            "device": null,
+            "display_name": "volumeattachment20231121084555",
+            "encryption_in_transit_type": null,
+            "id": "ocid1.volumeattachment.oc1.iad.anuwcljslbs56rqcrotdz7sckq4dtalcrw63vay6oglfzr2kua4ou6jb4fja",
+            "instance_id": "ocid1.instance.oc1.iad.anuwcljslbs56rqcgsjhfo5lx5odbpnqdibnd6pv3kw47f2yuumv4pb34s5a",
+            "ipv4": null,
+            "iqn": null,
+            "is_agent_auto_iscsi_login_enabled": null,
+            "is_multipath": null,
+            "is_pv_encryption_in_transit_enabled": false,
+            "is_read_only": false,
+            "is_shareable": false,
+            "iscsi_login_state": "",
+            "multipath_devices": [],
+            "port": null,
+            "state": "ATTACHED",
+            "time_created": "2023-11-21 08:45:55.872 +0000 UTC",
+            "timeouts": null,
+            "use_chap": null,
+            "volume_id": "ocid1.volume.oc1.iad.abuwcljsdnavyjg3v23fpc6ht4rtlzwy7yrr5apzvugwq7fy6ada4rkhtgia"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "data.oci_core_services.all_services",
+            "oci_core_instance.createInstance",
+            "oci_core_local_peering_gateway.lpg-vcn-tf1-to-adm",
+            "oci_core_local_peering_gateway.lpg-vcn-tf1-to-vpn",
+            "oci_core_nat_gateway.nat-vcn-tf1",
+            "oci_core_route_table.rt-vcn-tf1",
+            "oci_core_security_list.sl-vcn-tf1",
+            "oci_core_service_gateway.sg-vcn-tf1",
+            "oci_core_subnet.sub-vcn-tf1",
+            "oci_core_virtual_network.vcn-tf1",
+            "oci_core_volume.createVolume"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "oci_core_volume_backup_policy_assignment",
+      "name": "assignBackupPolicies",
+      "provider": "provider[\"registry.terraform.io/hashicorp/oci\"]",
+      "instances": [
+        {
+          "index_key": "host1",
+          "schema_version": 0,
+          "attributes": {
+            "asset_id": "ocid1.volume.oc1.iad.abuwcljsdnavyjg3v23fpc6ht4rtlzwy7yrr5apzvugwq7fy6ada4rkhtgia",
+            "id": "ocid1.volumebackuppolicyassign.oc1.iad.abuwcljstpzenrg4h6rl2jcxnc3qexpmyfi3vnwwxl3nlrhraflhey6zp3ua",
+            "policy_id": "ocid1.volumebackuppolicy.oc1..aaaaaaaadrzfwjb5tflixtmy5axp2kx65uqakgnupfogabzjhtn5x5dfra6q",
+            "time_created": "2023-11-21 08:45:28.204 +0000 UTC",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "data.oci_core_volume_backup_policies.get_predefined_volume_backup_policies",
+            "oci_core_volume.createVolume"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

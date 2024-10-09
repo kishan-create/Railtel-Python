@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Add ansible user and configure sudo for him. 
+sudo echo -e '# User rules for ansible\nansible ALL=(ALL) NOPASSWD:ALL\n' | sudo tee /etc/sudoers.d/80-cloud-init-ansible
+
+if ! sudo grep -q "^ansible:" /etc/group
+then
+    sudo groupadd -g 1101 ansible
+fi
+
+if ! sudo grep -q "^ansible:" /etc/passwd
+then
+    sudo useradd -m -u 1101 -d /home/ansible -c 'User ansible' -s '/bin/bash' -g ansible ansible
+fi
+
+if sudo test ! -d /home/ansible/.ssh
+then
+    sudo mkdir -p /home/ansible/.ssh
+fi
+
+if sudo test -f /home/ansible/.ssh/authorized_keys
+then
+    if ! sudo grep -q "^ssh-rsa put-ssh-key-content-here" /home/ansible/.ssh/authorized_keys
+    then
+        sudo echo 'ssh-rsa put-ssh-key-content-here ansible' | sudo tee -a /home/ansible/.ssh/authorized_keys
+    fi
+else
+    sudo echo 'ssh-rsa put-ssh-key-content-here ansible' | sudo tee /home/ansible/.ssh/authorized_keys
+    sudo chmod 600 /home/ansible/.ssh/authorized_keys
+    sudo chown -R ansible:ansible /home/ansible/.ssh
+fi
+
+# Add ansible user to connect remotely
+if ! sudo grep -q "^AllowUsers ansible" /etc/ssh/sshd_config
+then
+    sudo echo -e 'AllowUsers ansible' | sudo tee -a /etc/ssh/sshd_config
+fi
+
+sudo /usr/bin/systemctl restart sshd

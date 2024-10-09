@@ -1,0 +1,26 @@
+/*
+# LICENSE UPL 1.0
+#
+# Copyright (c) 1982-2018 Oracle and/or its affiliates. All rights reserved.
+# 
+# Initial version : July, 2019
+# Author: Oracle Consulting France
+# Description: Create compartment structure
+# 
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+*/
+
+# Information to store tfstate file in a bucket
+terraform {
+  backend "s3" {
+    endpoint = "compat.objectstorage.us-ashburn-1.oraclecloud.com"
+    region   = "us-ashburn-1"                        # or us-ashburn-1
+    bucket   = "brnoci"                                 # Put the tenant name here
+    key      = "script/terraform.tfstate" # This should contain "[OCI_BUCKET_NAME]/[OBJECT_NAME]"
+    # To create access key see : https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm#s3
+    #access_key =  # Put access_key here or in ~/.aws/credentials, section [default]
+    #secret_key =  # Put secret key here or in ~/.aws/credentials, section [default]
+    # All S3-specific validations are skipped:
+  }
+}
+

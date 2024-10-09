@@ -1,0 +1,200 @@
+
+@media only screen and (max-width:1700px){
+    .login-right-form-control {
+      width: 500px;
+  }
+  .login-form-inner-bg {
+    padding: 50px;
+  }
+  .login-button {
+    padding-top: 30px;
+  }
+  .login-left-text-bold {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 26px;
+  }
+  .login-left-make-text {
+    font-size: 20px;
+  }
+  .form-text-outer .input-outer {
+    padding-top: 30px;
+  }
+  .captcha-outer-main-outer {
+    margin-top: 30px;
+  }
+  .dont-have-block p {
+    line-height: 18px;
+  }
+  .input-outer label {
+    font-size: 18px;
+    padding-bottom: 7px;
+  }
+  .login-left-container {
+    width: 400px;
+  }
+  .input-icon {
+    bottom: 15px;
+    width: 23px;
+  }
+  .signup-form-control {
+    width: 500px;
+  }
+  .login-form-inner-bg {
+    padding: 40px;
+  }
+  .signup-form-control .input-outer label {
+    font-size: 16px;
+    padding-bottom: 7px;
+  }
+  .input-main input {
+    font-size: 14px;
+    padding: 12px 10px;
+  }
+  .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    height: auto !important;
+    font-size: 14px !important;
+    padding: 12px 10px !important;
+  }
+  .drop-down-outer label {
+    font-size: 16px;
+    padding-bottom: 7px;
+  }
+  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select{
+    height: auto !important;
+    font-size: 14px !important;
+    padding: 12px 10px !important;
+  }
+  .css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label{
+    font-size: 14px;
+  }
+  .captcha-outer img {
+    width: 28px;
+    margin-top: 6px;
+  }
+  .forget-passwoed-block a {
+    font-size: 14px;
+  }
+  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root{
+    padding: 9px 3px !important;
+  } 
+  .login-button a {
+    padding: 12px 19px;
+    font-size: 18px;
+  }
+  .signup-col-2 .input-icon {
+    bottom: 17px;
+    width: 17px;
+  }
+  
+  }
+  
+  @media only screen and (max-width:1200px){
+    .login-bg {
+      padding: 50px 30px;
+    }
+    .sign-head {
+      font-size: 35px;    padding-bottom: 15px;
+  }
+  .input-outer label {
+    font-size: 17px;
+  }
+  .login-button a {
+    padding: 13px 17px;
+    border-radius: 10px;
+    font-size: 19px;
+  }
+  .dont-have-block {
+    padding-top: 20px;
+  }
+  }
+  
+  @media only screen and (max-width:980px){
+    .login-left {
+      width: 100%;
+  }
+  .login-left .logo {
+    width: 200px;
+  }
+  .login-left-inner {
+    padding-top: 35px;
+  }
+  .login-left-container {
+    width: 400px;
+  }
+  .login-right {
+    width: 100%;
+  }
+  .login-right-form-control {
+    width: 100%;
+  }
+  .login-form-inner-bg {
+    padding: 30px;
+  }
+  .input-main input {
+    padding: 13px 15px;
+  }
+  .input-icon {
+    bottom: 14px;
+    width: 25px;
+  }
+  .input-icon-new{
+    bottom:inherit;
+    top:63px;
+  }
+  .dont-have-block p {
+    font-size: 16px;
+  }
+  .sign-head {
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
+  .login-bg {
+    padding: 30px 30px;
+  }
+  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+    padding: 7px 2px 7px 0;
+  }
+  .css-ahj2mt-MuiTypography-root {
+    font-size: 13px;
+  }
+  .captcha-outer img {
+    width: 26px;
+    margin-top: 8px;
+  }
+  .login-middle-outer {
+    display: block;
+  }
+  .signup-form-control {
+    width: 100%;
+  }
+  }
+  
+  @media only screen and (max-width:480px){
+  
+    .login-left-container {
+      width: 100%;
+  }
+  .login-left-text-bold {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-size: 20px;
+  }
+  .login-left-make-text {
+    font-size: 18px;
+  }
+  .login-form-inner-bg {
+    padding: 20px;
+  }
+  .form-text-outer .input-outer {
+    padding-top: 20px;
+  }
+  .captcha-outer {
+    width: 100%;
+    height: 48px;
+    padding: 3px 10px;
+    float: left;
+    margin-bottom: 20px;
+  }
+  
+  }

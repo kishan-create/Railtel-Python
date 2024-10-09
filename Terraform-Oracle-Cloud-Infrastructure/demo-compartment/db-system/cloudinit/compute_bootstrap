@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Update to the latest version of all already installed packages
+yum update -y
+
+# Change security settings for selinux and add port to firewall (eg: Weblogic ports)
+setenforce permissive
+sed -i -e 's/SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
+firewall-cmd --zone=public --add-port=7002/tcp --permanent
+firewall-cmd --zone=public --add-port=7004/tcp --permanent
+firewall-cmd --reload
+
+# Add ansible user and configure sudo for him
+echo -e "# User rules for ansible\nansible ALL=(ALL) NOPASSWD:ALL\n" >/etc/sudoers.d/80-cloud-init-ansible
+groupadd -g 1101 ansible
+useradd -m -u 1101 -d /home/ansible -c "User ansible" -s "/bin/bash" -g ansible ansible
+
+mkdir -p /home/ansible/.ssh
+chmod 700 /home/ansible/.ssh
+
+# Add ssh key for ansible user
+echo "ssh-rsa put-ssh-key-content-here ansible-user" > /home/ansible/.ssh/authorized_keys
+chmod 600 /home/ansible/.ssh/authorized_keys
+
+chown -R ansible:ansible /home/ansible/.ssh
